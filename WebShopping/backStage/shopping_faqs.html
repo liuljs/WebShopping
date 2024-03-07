@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <title>管理後台_饅頭頭泰國佛牌</title>
+    <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="./css/bootstrap_v4.4.1.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/atlantis.min.css">
+    <link rel="stylesheet" href="./css/quill.snow.css">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+		<div class="main-header">
+			<!-- Logo Header -->
+			<div class="logo-header" data-background-color="red2">
+				
+				<a class="logo" href="./index.html" >
+					<img src="./img/elements/logo2.png" class="navbar-brand">
+				</a>
+				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon">
+						<i class="fal fa-bars"></i>
+					</span>
+				</button>
+				<button class="topbar-toggler more"><i class="far fa-ellipsis-v"></i></button>
+				<div class="nav-toggle">
+					<button class="btn btn-toggle toggle-sidebar">
+						<i class="fal fa-bars"></i>
+					</button>
+				</div>
+			</div>
+
+            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="red">
+				<div class="container-fluid">
+					<!-- <div class="collapse" id="search-nav">
+                    <form class="navbar-left navbar-form nav-search mr-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button type="submit" class="btn btn-search pr-1">
+                                    <i class="fa fa-search search-icon"></i>
+                                </button>
+                            </div>
+                            <input type="text" placeholder="搜尋 ..." class="form-control">
+                        </div>
+                    </form>
+                    </div> -->
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item dropdown hidden-caret mr-2 nav-item-hover">
+                            <p class="dropdown-toggle mb-0" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-alt"></i>
+                                <span class="get_admin"></span>
+                            </p>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <p class="dropdown-item mb-0 dropdown-non">設定</p>
+                                <div class="dropdown-divider"></div>
+                                <p class="btnOpen dropdown-item mb-0" data-toggle="modal" data-target="#passWordEdit">修改密碼</p>
+                            </div>
+                        </li>
+                        <li class="nav-item hidden-caret nav-item-hover">
+                            <p class="btnLogout mb-0"><i class="far fa-sign-out"></i> 登出</p>
+						</li>
+                    </ul>
+				</div>
+            </nav>
+        </div>
+
+        <div class="sidebar sidebar-style-2">
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content menus">
+                    <ul class="nav nav-primary"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="page-inner">
+                    <div class="page-header">
+						<h4 class="page-title">購物FAQ管理</h4>
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div class="card">
+                                <div class="card-header d-flex align-items-center">
+                                    <h2 class="text-primary mb-0">新增問與答</h2>
+                                    <span class="notes">（以下為必填欄位）</span>
+                                  </div>
+                                <div class="card-body">
+                                    <div class="text-right mb-3">
+                                        <div class="input_wrap">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control add_qst" placeholder="問題">
+                                                <textarea type="text" class="form-control mt-2 add_ans" placeholder="回答"></textarea>
+                                            </div>
+                                            <div class="form-group text-right">
+                                                <button class="btn btn-primary btnAddQas"><i class="far fa-comments"></i> 新增</button>
+                                            </div>    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-8 faqs"></div>
+                    </div>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        © 饅頭頭泰國佛牌 All Rights Reserved.
+                    </nav>
+                    <div class="copyright ml-auto">
+                        2021, made with by <a href="https://www.payware.com.tw/">派維爾金流支付</a>
+                    </div>				
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="passWordEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">修改密碼<span class="notes">（＊號為必填欄位）</span></h3>
+                    <button type="button" class="close"><span>&times;</span></button>
+                    <input type="hidden" class="closez" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>舊密碼<span class="markz">（包含大小寫英數字，至少要4碼）*</span></label>
+                        <input type="password" class="editInput form-control old_psw">
+                    </div>
+                    <div class="form-group">
+                        <label>新密碼<span class="markz">（包含大小寫英數字，至少要4碼）*</span></label>
+                        <input type="password" class="editInput form-control new_psw">
+                    </div>
+                    <div class="form-group">
+                        <label>確認新密碼<span class="markz">（包含大小寫英數字，至少要4碼）*</span></label>
+                        <input type="password" class="editInput form-control cfm_psw">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btnChangePsw">修改</button>
+                    <button type="button" class="btn btnCancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="./js/jquery.3.2.1.min.js"></script> -->
+    <!-- <script src="./js/popper.min.js"></script> -->
+    <!-- <script src="./js/bootstrap_v4.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="./js/jquery.scrollbar.min.js"></script>
+    <script src="./js/atlantis.min.js"></script>
+
+    <script src="./feature/common.js"></script>
+    <script src="./feature/menu.js"></script>
+    <script src="./feature/shippingfaqs.js"></script>
+
+</body>
+
+</html>

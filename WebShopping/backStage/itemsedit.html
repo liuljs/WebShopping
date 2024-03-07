@@ -1,0 +1,640 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+    <title>管理後台_饅頭頭泰國佛牌</title>
+    <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.min.css">
+
+    <!-- <link rel="stylesheet" href="./css/bootstrap_v4.4.1.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css">
+    <link rel="stylesheet" href="./css/atlantis.min.css">
+    <link rel="stylesheet" href="./css/quill.snow.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="main-header">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="red2">
+
+                <a class="logo" href="./index.html">
+                    <img src="./img/elements/logo2.png" class="navbar-brand">
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                    data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fal fa-bars"></i>
+                    </span>
+                </button>
+                <button class="topbar-toggler more"><i class="far fa-ellipsis-v"></i></button>
+                <div class="nav-toggle">
+                    <button class="btn btn-toggle toggle-sidebar">
+                        <i class="fal fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <nav class="navbar navbar-header navbar-expand-lg" data-background-color="red">
+                <div class="container-fluid">
+                    <!-- <div class="collapse" id="search-nav">
+                    <form class="navbar-left navbar-form nav-search mr-md-3">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <button type="submit" class="btn btn-search pr-1">
+                                    <i class="fa fa-search search-icon"></i>
+                                </button>
+                            </div>
+                            <input type="text" placeholder="搜尋 ..." class="form-control">
+                        </div>
+                    </form>
+                    </div> -->
+                    <ul class="navbar-nav topbar-nav ml-md-auto align-items-center">
+                        <li class="nav-item dropdown hidden-caret mr-2 nav-item-hover">
+                            <p class="dropdown-toggle mb-0" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-user-alt"></i>
+                                <span class="get_admin"></span>
+                            </p>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                <p class="dropdown-item mb-0 dropdown-non">設定</p>
+                                <div class="dropdown-divider"></div>
+                                <p class="btnOpen dropdown-item mb-0" data-toggle="modal" data-target="#passWordEdit">
+                                    修改密碼</p>
+                            </div>
+                        </li>
+                        <li class="nav-item hidden-caret nav-item-hover">
+                            <p class="btnLogout mb-0"><i class="far fa-sign-out"></i> 登出</p>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="sidebar sidebar-style-2">
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content menus">
+                    <ul class="nav nav-primary"></ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-panel">
+            <div class="content">
+                <div class="page-inner">
+                    <div class="page-header">
+                        <h4 class="page-title" data-num="">編輯商品</h4>
+                        <span class="notes">（＊號為必填欄位）</span>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header d-flex">
+                                    <a class="btnReturn"><i class="far fa-chevron-left"></i></a>
+                                    <h2 class="text-primary d-inline  mb-0">媒體管理</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-row">
+                                        <span class="x1"></span>
+                                        <div class="fileBlock form-group col-md-auto mr-4">
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">封面照片<span class="markz"></span></label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail">
+
+                                                    </div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增照片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_titImg" name="pic1"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="fileBlock form-group d-flex flex-wrap justify-content-start col-md-auto">
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 1</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic1"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 2</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic2"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 3</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic3"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;" class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 4</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic4"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 5</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic5"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="mx-2 pics">
+                                                <label class="d-block">圖片 6</label>
+                                                <div class="fileinput fileinput-new" data-provides="fileinput" id="">
+                                                    <div class="fileinput-new thumbnail">
+                                                        <!-- <img id="picImg" class="imagecheck-image" src="img/150X150.jpg"> -->
+                                                        <div class="sampleImg">
+                                                            <i class="fas fa-file-upload"></i>
+                                                            <p>上傳圖片</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+                                                    <div class="d-flex">
+                                                        <span class="w-100 btn btn-info btn-file">
+                                                            <span class="fileinput-new"><i class="fas fa-file-plus"></i>新增圖片</span>
+                                                            <span class="fileinput-exists"><i class="fas fa-pencil"></i></span>
+                                                            <input type="file" class="imgFile edit_picImag" name="pic6"id="picID" accept="image/gif,image/jpeg,image/x-png">
+                                                        </span>
+                                                        <a href="javascript:;"class="btn btn-warning fileinput-exists ml-1 btnClrImg"data-dismiss="fileinput">
+                                                            <i class="fas fa-trash"></i>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-auto">
+                                            <label class="fcGray">注意事項</label>
+                                            <ul class="mt-2">
+                                                <li class="noteItem mb-2">封面照片，必須上傳</li>
+                                                <li class="noteItem mb-2">圖片 1-6 為選擇上傳（以輪播形式呈現）</li>
+                                                <li class="noteItem mb-2">圖片大小：最大 5Mb（建議長寬像素為 600x600）</li>
+                                                <li class="noteItem mb-2">圖片格式：只能上傳一般圖片格式（例：JPG/PNG 等）</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="text-primary d-inline">基本資訊</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="form-row align-items-baseline">
+                                        <div class="form-group col-md-6">
+                                            <label>商品名稱<span class="markz"></span></label>
+                                            <input type="text" class="form-control edit_pdtName">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>商品分類<span class="markz"></span></label>
+                                            <div class="d-flex align-items-center">
+                                                <div class="form-control mr-1 edit_pdtCls"></div>
+                                                <div class="form-control btnEditCls" data-toggle="modal"data-target="#setClsModal">
+                                                    <i class="fas fa-edit"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <div class="mb-4 ">
+                                                <label>上架日期</label>
+                                                <input type="date" class="form-control mb-2 edit_pdtStart">
+                                            </div>
+                                            <div class="mb-4 ">
+                                                <label>下架日期</label>
+                                                <input type="date" class="form-control mb-2 edit_pdtEnd">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label>商品設定</label>
+                                            <div class="py-2">
+                                                <div class="custom-control custom-switch">
+                                                    <input type="checkbox" class="custom-control-input popuzStatus"id="switch1">
+                                                    <label class="custom-control-label" for="switch1">首頁推薦</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="text-primary">銷售資訊</h2>
+                                </div>
+                                <div class="card-body">
+                                    <div class="specifications">
+                                        <div class="form-row align-items-end specz">
+                                            <div class="form-group col-md-6">
+                                                <label>商品定價<span class="markz"></span></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">$</div>
+                                                    </div>
+                                                    <input type="text" class="form-control numberz edit_orgPrice" placeholder="價格">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>商品售價<span class="markz"></span></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">$</div>
+                                                    </div>
+                                                    <input type="text" class="form-control numberz edit_specPrice" placeholder="價格">
+                                                </div>
+                                            </div>
+                                            <div class="form-group col-md-3">
+                                                <label>商品數量<span class="markz"></span></label>
+                                                <div class="input-group mb-2">
+                                                    <div class="input-group-prepend">
+                                                        <div class="input-group-text">Q</div>
+                                                    </div>
+                                                    <input type="text" class="form-control numberz edit_specQty" placeholder="數量">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="text-primary d-inline">其他資訊</h2>
+                                </div>
+                                <div class="card-body">
+                                    <span class="x2"></span>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>
+                                                運費價格表
+                                                <!-- <span class="notes">（僅適用此商品，至少開啟一種配送選項）</span> -->
+                                            </label>
+                                            <ul class="list-group">
+                                                <li class="list-group-item add_feez">
+                                                    <span class="feezName" data-ofeez="60" data-num="SevenEleven">7-11</span>
+                                                    <span class="fee-block">
+                                                        <div class="feez">NT$ <span>60</span> 元</div>
+                                                        <div class="btnSetFee" data-toggle="modal" data-target="#setFeeModal"><i class="fas fa-edit btnEditFeez"></i></div>
+                                                        <div class="switch-block">
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input feezStatus" id="switch5">
+                                                                <label class="custom-control-label" for="switch5">開啟</label>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </li>
+                                                <li class="list-group-item add_feez">
+                                                    <span class="feezName" data-ofeez="60" data-num="FamilyMart">全家</span>
+                                                    <span class="fee-block">
+                                                        <div class="feez">NT$ <span>60</span> 元</div>
+                                                        <div class="btnSetFee" data-toggle="modal" data-target="#setFeeModal"><i class="fas fa-edit btnEditFeez"></i></div>
+                                                        <div class="switch-block">
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input feezStatus" id="switch6">
+                                                                <label class="custom-control-label" for="switch6">開啟</label>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </li>
+                                                <li class="list-group-item add_feez">
+                                                    <span class="feezName" data-ofeez="80" data-num="HomeDelivery">宅配</span>
+                                                    <span class="fee-block">
+                                                        <div class="feez">NT$ <span>80</span> 元</div>
+                                                        <div class="btnSetFee" data-toggle="modal" data-target="#setFeeModal"><i class="fas fa-edit batnEditFeez"></i></div>
+                                                        <div class="switch-block">
+                                                            <div class="custom-control custom-switch">
+                                                                <input type="checkbox" class="custom-control-input feezStatus" id="switch8">
+                                                                <label class="custom-control-label" for="switch8">開啟</label>
+                                                            </div>
+                                                        </div>
+                                                    </span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="text-primary d-inline desciptions">商品介紹 <!--<span class="notes">（至少設定一個標籤、介紹）</span>--></h2>
+                                </div>
+                                <div class="card-body">
+                                    <span class="x3"></span>
+                                    <!--
+                                    <ul class="pdtTabs nav nav-line nav-color-primary">
+                                        <li class="nav-item add_pdtTabz">
+                                            <a class="nav-link p-0 active" data-toggle="tab" href="#tit1"><input class="form-control squz" type="text" placeholder="例:商品介紹"></a>
+                                        </li>
+                                        <li class="nav-item add_pdtTabz">
+                                            <a class="nav-link p-0" data-toggle="tab" href="#tit2"><input class="form-control squz" type="text" placeholder="例:商品特色"></a>
+                                        </li>
+                                    </ul>
+                                    -->
+                                    <div class="tab-content mt-2">
+                                        <div id="tit1" class="tab-pane fade show active">
+                                            <div class="contentz">
+                                                <div id="editor1"></div>
+                                                <input type="file" name="" class="edit_cntsImg" hidden>
+                                            </div>
+                                        </div>
+                                        <div id="tit2" class="tab-pane fade">
+                                            <div class="contentz">
+                                                <div id="editor2"></div>
+                                                <input type="file" name="" class="edit_cntsImg" hidden>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-footer">
+                        <div class="card item-controls">
+                            <div class="card-body d-flex justify-content-end align-items-center">
+                                <button type="button" class="btn btn-light my-5 mr-2 btnCancel">取消</button>
+                                <button type="button" class="btn btn-light my-5 mr-2 btnEdit off">修改並下架</button>
+                                <button type="button" class="btn btn-primary my-5 btnEdit on">修改並上架</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- modal SetFee -->
+            <div class="modal fade" id="setFeeModal" tabindex="-1" role="dialog" aria-labelledby="setFeeModalTitle"aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content feezs"></div>
+                </div>
+            </div>
+            <!-- modal cls -->
+            <div class="modal fade" id="setClsModal" tabindex="-1" role="dialog" aria-labelledby="setClsModalTitle"aria-hidden="true">
+                <div class="modal-dialog  modal-lg modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">商品分類設定</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body sort-block">
+                            <div class="sortz">
+                                <ul class="list-group"></ul>
+                                <ul class="list-group"></ul>
+                                <ul class="list-group"></ul>
+                            </div>
+                            <div class="sortList mt-3 form-control">
+                                <span>已選擇商品分類：</span>
+                                <div class="selectedList"></div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary btnSaveCls" disabled>設定</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <nav class="pull-left">
+                        © 饅頭頭泰國佛牌 All Rights Reserved.
+                    </nav>
+                    <div class="copyright ml-auto">
+                        2021, made with by <a href="https://www.payware.com.tw/">派維爾金流支付</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="passWordEdit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"data-backdrop="static" data-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="exampleModalLabel">修改密碼<span class="notes">（＊號為必填欄位）</span></h3>
+                    <button type="button" class="close"><span>&times;</span></button>
+                    <input type="hidden" class="closez" data-dismiss="modal" aria-label="Close" aria-hidden="true">
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>舊密碼<span class="markz">（包含大小寫英數字，至少要4碼）</span></label>
+                        <input type="password" class="editInput form-control old_psw">
+                    </div>
+                    <div class="form-group">
+                        <label>新密碼<span class="markz">（包含大小寫英數字，至少要4碼）</span></label>
+                        <input type="password" class="editInput form-control new_psw">
+                    </div>
+                    <div class="form-group">
+                        <label>確認新密碼<span class="markz">（包含大小寫英數字，至少要4碼）</span></label>
+                        <input type="password" class="editInput form-control cfm_psw">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btnChangePsw">修改</button>
+                    <button type="button" class="btn btnCancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="./js/jquery.3.2.1.min.js"></script> -->
+    <!-- <script src="./js/popper.min.js"></script> -->
+    <!-- <script src="./js/bootstrap_v4.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mouse0270-bootstrap-notify/3.1.5/bootstrap-notify.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/jquery.ui.touch-punch.min.js"></script>
+
+    <script src="./js/jquery.scrollbar.min.js"></script>
+    <script src="./js/atlantis.min.js"></script>
+    <script src="./js/bootstrap-fileinput.js"></script>
+    <script src="./js/quill.js"></script>
+
+    <script src="./feature/common.js"></script>
+    <script>
+        $(function () {
+            // 編輯    
+            var toolbarOptions = [
+                [{
+                    header: [1, 2, 3, 4, 5, false]
+                }],
+                ['bold', 'italic', 'underline'],
+                [{
+                    color: []
+                }, {
+                    background: []
+                }],
+                ['link', 'blockquote', 'code-block'],
+                [{
+                    list: 'ordered'
+                }, {
+                    list: 'bullet'
+                }, {
+                    'align': []
+                }]
+            ];
+            var initQuill = function (id) {
+                switch (id) {
+                    case '#editor1':
+                        quill_0 = new Quill(id, {
+                            modules: {
+                                toolbar: toolbarOptions
+                            },
+                            placeholder: '內容..',
+                            theme: 'snow'
+                        });
+                        break;
+                    case '#editor2':
+                        quill_1 = new Quill(id, {
+                            modules: {
+                                toolbar: toolbarOptions
+                            },
+                            placeholder: '內容..',
+                            theme: 'snow'
+                        });
+                        break;
+                    default:
+                }
+
+            }
+            initQuill('#editor1');
+            initQuill('#editor2');
+        });
+    </script>
+
+    <script src="./feature/menu.js"></script>
+    <script src="./feature/itemsedit.js"></script>
+</body>
+
+</html>
